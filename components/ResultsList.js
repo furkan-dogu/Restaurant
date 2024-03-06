@@ -1,24 +1,41 @@
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import ResultDetail from './ResultDetail'
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import React from "react";
+import ResultDetail from "./ResultDetail";
 
-export default function ResultsList({title, results}) {
-    
+export default function ResultsList({ title, results }) {
   return (
-    <View>
-      <Text>{title}</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>{title}</Text>
       <FlatList
-      data={results}
-      renderItem={({item}) => {
-        return (
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        data={results}
+        renderItem={({ item }) => {
+          return (
             <TouchableOpacity>
-                <ResultDetail result={item} />
+              <ResultDetail result={item} />
             </TouchableOpacity>
-        )
-      }}
-       />
+          );
+        }}
+      />
     </View>
-  )
+  );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+        marginBottom: 10,
+    },
+    title: {
+        fontSize: 18,
+        fontWeight: "bold",
+        marginLeft: 15,
+        marginBottom: 5,
+    }
+});
