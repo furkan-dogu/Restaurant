@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import React, { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import useResults from "../hooks/useResults";
@@ -48,5 +48,3 @@ export default function SearchScreen() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({});
